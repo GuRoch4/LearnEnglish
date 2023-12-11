@@ -1,0 +1,242 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.altura-tela {
+    height: 100vh;
+}
+
+.background-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.escuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1408037c;
+    z-index: -1;
+}
+
+.faixa-sand {
+    position: fixed;
+    top: 500px;
+    left: -600px;
+    width: 2000px;
+    height: 900px;
+    transform-origin: left top;
+    transform: rotate(-45deg);
+    background-color: #FDFAE9;
+    box-shadow: 0px 0px 20px 1px #2F1105;
+    z-index: -3;
+}
+
+.faixa-marrom {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 1350px;
+    height: 400px;
+    transform-origin: left top;
+    transform: rotate(55deg);
+    background-color: #2F1105;
+    box-shadow: 0px 0px 20px 1px #2F1105;
+    z-index: -1;
+}
+
+.faixa-text {
+    position: fixed;
+    top: 0px;
+    left: 25%;
+    width: 400px;
+    height: 100vh;
+    background-color: #1408033b;
+    display: block;
+    z-index: -2;
+}
+.titulo-1{
+    text-align: left;
+    line-height: 1.2;
+    font-size: 50px;
+    font-weight: bold;
+    color: #2F1105;
+}
+
+.texto-1{
+    text-align: center;
+    color: #2F1105;
+    line-height: 1.7;
+}
+
+.box-1 {
+    margin: 15% 10%;
+    background-color: #ffffff;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px #2F1105;
+}
+
+.caixa {
+    margin-left: 50%;
+    width: 600px;
+    height: 300px;
+    background-color: #FDFAE9;
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px #2F1105;
+}
+
+.caixa-two {
+    width: 600px;
+    height: 370px;
+    background-color: #FDFAE9;
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px #2F1105;
+}
+
+.titulos {
+    font-size: 50px;
+    font-weight: bold;
+    color: #2F1105;
+}
+
+.textos {
+    font-size: 30px;
+}
+
+.textos-sm {
+    font-size: 25px;
+}
+
+.textos-ssm {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.btn-custom {
+    background-color: #2F1105;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+.btn-custom-two {
+    background-color: #2F1105;
+    color: #ffffff;
+}
+
+
+.custom-select {
+    color: #2F1105;
+    background-color: #ffffff;
+    border-color: #2F1105;
+}
+
+.form-select:focus {
+    border-color: #2F1105;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #2F1105;
+    box-shadow: none;
+}
+
+.label {
+    margin-top: 880px;
+    color: #2F1105;
+    font-weight: bold;
+}
+
+.label-two {
+    color: #d64308;
+    font-weight: bold;
+    width: 1455px;
+    overflow: hidden;
+}
+
+.label-three {
+    margin-top: 340px;
+    color: #d64308;
+    font-weight: bold;
+    width: 1455px;
+    overflow: hidden;
+}
+
+.mover-text {
+    display: inline-block;
+    position: absolute;
+    animation: moverText 25s linear forwards;
+    white-space: nowrap;
+    animation-direction: alterrenate;
+}
+
+.reverse {
+    animation-direction: reverse;
+  }
+
+@keyframes moverText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .faixa-text {
+        display: none;
+    }
+    .caixa {
+        margin-left: 0;
+        height: 300px;
+    }
+    .titulos {
+        font-size: 40px;
+        font-weight: bold;
+        color: #2F1105;
+    }
+    
+
+}
+
+@media screen and (max-width: 500px) {
+    .faixa-text {
+        display: none;
+    }
+    .faixa-marrom {
+        display: none;
+    }
+    .faixa-sand {
+        display: none;
+    }
+
+    .caixa, .caixa-two {
+        margin-left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #FDFAE9;
+        text-align: center;
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 1px 1px 5px 1px #2F1105;
+    }
+}

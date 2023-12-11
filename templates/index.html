@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Start
+{% endblock%}
+
+{% block text %}
+    <div class="faixa-text">
+        <div class="box-1">
+            <p class="titulo-1">Purpose<br>of this<br>website.</p>
+            <p class="texto-1">This site is like a word game where you choose a topic and receive a series of English words to translate into Portuguese. It's a practical, interactive way to practice your translation skills while having fun. You can explore different topics, challenging yourself to find the best Portuguese matches for English words. It's a good way to learn and improve your language skills while having fun!</p>
+        </div>
+    </div>
+{% endblock%}
+
+{% block main %}
+<div class="d-flex justify-content-center align-items-center altura-tela">
+    <div class="caixa">
+        <form action="/escolher_tema" method="post">
+            <div class="mb-3">
+                <label for="tema" class="form-label titulos">Choose your Theme</label>
+                <select class="form-select textos custom-select" aria-label="Default select example" id="tema" name="tema">
+                    <option  value="choose" selected>Select Theme</option>
+                    {% for tabela in tabelas %}
+                    <option value="{{ tabela[1] }}">{{ tabela[0] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn  textos btn-custom" value="Start">Choose</button>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}

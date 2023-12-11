@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Restart
+{% endblock%}
+
+{% block main%}
+<div class="d-flex justify-content-center align-items-center altura-tela escuro">
+    <div class="caixa-two">
+        <h1 class="titulos">You missed!</h1>
+        <h1 class="titulos">Restart the game.</h1>
+        {% if mensagem %}
+        <p class="textos-sm">{{ mensagem }}</p>
+        {% endif %}
+        <p class="textos-ssm">Your final score is: {{ pontos }} !!!</p>
+        <a href="/" class="btn textos btn-custom-two">Restart</a>
+    </div>
+</div>
+{% endblock %}

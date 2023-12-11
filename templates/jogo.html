@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Translate
+{% endblock%}
+
+{% block script %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#verificarForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/verificar_traducao',
+                    data: $('#verificarForm').serialize(),
+                    success: function (data) {
+                        if (data.correto) {
+                            location.reload();
+                        } else {
+                            window.location.href = '/recomecar_jogo';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+
+
+{% block main %}
+    <div class="d-flex justify-content-center align-items-center altura-tela escuro">
+        <div class="caixa-two text">
+            <h1 class="titulos">Translate the word</h1>
+            <form id="verificarForm" method="post">
+                <div>
+                    <p class="textos">Word: {{ word_english }}</p>
+                </div>
+                <input class="form-control textos custom-select" type="text" id="traducao_usuario" name="traducao_usuario">
+                <input type="hidden" id="word_english" name="word_english" value="{{ word_english }}">
+                <input type="hidden" id="word_portuguese" name="word_portuguese" value="{{ word_portuguese }}">
+                <div>
+                    <button type="submit" class="btn  textos btn-custom" value="Start">Submit</button>
+                </div>
+            </form>
+            <p class="textos-ssm">Current score: <span id="pontuacao_atual">{{ pontos }}</span></p>
+        </div>
+    </div>
+{% endblock %}
